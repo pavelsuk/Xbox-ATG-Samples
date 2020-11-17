@@ -8,6 +8,8 @@
 #include "pch.h"
 #include "RawGameControllerUWP.h"
 
+
+
 #include "ATGColors.h"
 #include "ControllerFont.h"
 
@@ -202,10 +204,18 @@ void Sample::Update(DX::StepTimer const&)
         }
     }
 
+#ifdef _DEBUG
+    char buffer[100];
+
     for (uint32_t i = 0; i < m_currentSwitchCount; i++)
     {
-		//Handle m_currentSwitchReading[i], reading GameControllerSwitchPosition
+        if (m_currentSwitchReading[i]!= GameControllerSwitchPosition::Center) {
+            sprintf_s(buffer, "Switch %d is %d\n", i, m_currentSwitchReading[i]);
+            OutputDebugStringA(buffer);
+        }
+        
     }
+#endif
 
 	if (m_currentAxisCount == 6)
 	{
@@ -218,6 +228,16 @@ void Sample::Update(DX::StepTimer const&)
 		m_rightTrigger = m_currentAxisReading[5];
 	}
 
+    if (m_currentAxisCount == 4)
+    {
+        //LogitechG29 controllers have 4 axis
+        m_leftStickX = m_currentAxisReading[0];
+        m_leftStickY = m_currentAxisReading[1];
+        m_rightStickX = m_currentAxisReading[2];
+        m_rightStickY = m_currentAxisReading[3];
+        // m_leftTrigger = m_currentAxisReading[4];
+        // m_rightTrigger = m_currentAxisReading[5];
+    }
     PIXEndEvent();
 }
 #pragma endregion
