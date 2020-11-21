@@ -322,6 +322,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Media\Textures\gamepad.dds" />
+    <Image Include="..\..\..\Media\Textures\lgg29.dds" />
     <Image Include="Assets\Logo.png" />
     <Image Include="Assets\SmallLogo.png" />
     <Image Include="Assets\SplashScreen.png" />

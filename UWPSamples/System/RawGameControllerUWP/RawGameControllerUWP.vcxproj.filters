@@ -70,6 +70,9 @@
     <Image Include="..\..\..\Media\Textures\gamepad.dds">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="..\..\..\Media\Textures\lgg29.dds">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />

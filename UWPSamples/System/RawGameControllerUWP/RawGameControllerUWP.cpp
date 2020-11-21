@@ -378,7 +378,7 @@ void Sample::CreateDeviceDependentResources()
     m_font = std::make_unique<SpriteFont>(device, L"SegoeUI_24.spritefont");
     m_ctrlFont = std::make_unique<SpriteFont>(device, L"XboxOneController.spritefont");
 
-    DX::ThrowIfFailed(CreateDDSTextureFromFile(device, L"gamepad.dds", nullptr, m_background.ReleaseAndGetAddressOf()));
+    DX::ThrowIfFailed(CreateDDSTextureFromFile(device, L"lgg29.dds", nullptr, m_background.ReleaseAndGetAddressOf()));
 }
 
 // Allocate all memory resources that change on a window SizeChanged event.
